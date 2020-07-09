@@ -6,12 +6,12 @@ import net.minecraft.block.material.Material;
 /**
  *
  */
-public class ExampleBlock extends Block {
+public class Kepler452_b_dirt extends Block {
 
 	/**
 	 *
  	 */
-	public ExampleBlock() {
+	public Kepler452_b_dirt() {
 		super(Material.ROCK);
 	}
 }

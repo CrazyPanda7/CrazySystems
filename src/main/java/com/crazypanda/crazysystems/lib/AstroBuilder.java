@@ -66,7 +66,7 @@ public class AstroBuilder {
 		main.setParentSolarSystem(body);
 		main.setTierRequired(-1);
 		main.setBodyIcon(
-				new ResourceLocation(this.modid, "textures/celestialbodies/" + name + "/" + starname + ".png"));
+				new ResourceLocation(this.modid, "textures/celestialbodies/" + starname + ".png"));
 		body.setMainStar(main);
 		return body;
 	}
@@ -191,7 +191,7 @@ public class AstroBuilder {
 		Planet unreachable = new Planet(planetName).setParentSolarSystem(solarSystem);
 		unreachable.setRelativeDistanceFromCenter(new ScalableDistance(distance, distance));
 		unreachable
-				.setBodyIcon(new ResourceLocation(this.modid, "textures/gui/celestialbodies/" + planetName + ".png"));
+				.setBodyIcon(new ResourceLocation(this.modid, "textures/celestialbodies/" + planetName + ".png"));
 		GalaxyRegistry.registerPlanet(unreachable);
 		return unreachable;
 	}

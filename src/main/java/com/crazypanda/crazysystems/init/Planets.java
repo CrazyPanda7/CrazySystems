@@ -25,7 +25,7 @@ import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 
 public class Planets {
 	
-	public static Planet kelper452_a = new Planet("kelper452_a");
+	public static Planet kepler452_b;
 	static AstroBuilder builder = new AstroBuilder(CrazySystems.MODID);
 	public static void init() {
 		initPlanets();
@@ -33,12 +33,13 @@ public class Planets {
 	}
 
 	public static void initPlanets() {
-		kelper452_a = builder.buildUnreachablePlanet("yzcetib", SolarSystems.kepler452, 0.5F);
-		kelper452_a.setRingColorRGB(0.8F, 0.0F, 0.0F);
+		kepler452_b = builder.buildUnreachablePlanet("kepler452_b", SolarSystems.kepler452, 0.5F);
+		kepler452_b.setRingColorRGB(0.8F, 0.0F, 0.0F);
+		//kepler452b.setBodyIcon("kepler452_b");
 
 	}
 	
 	public static void registerPlanets() {
-		GalaxyRegistry.registerPlanet(kelper452_a);
+		GalaxyRegistry.registerPlanet(kepler452_b);
 	}
 }
