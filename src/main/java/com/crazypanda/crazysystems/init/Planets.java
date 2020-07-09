@@ -1,8 +1,6 @@
 
 package com.crazypanda.crazysystems.init;
 
-import java.util.ArrayList;
-
 import com.crazypanda.crazysystems.CrazySystems;
 import com.crazypanda.crazysystems.lib.AstroBuilder;
 import com.crazypanda.crazysystems.planets.kepler452.planetb.WorldProviderKepler452b;
@@ -13,7 +11,6 @@ import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.world.AtmosphereInfo;
 import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeMoon;
-import net.minecraft.world.biome.Biome;
 
 public class Planets {
 

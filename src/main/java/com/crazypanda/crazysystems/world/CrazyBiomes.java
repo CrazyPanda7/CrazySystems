@@ -1,4 +1,3 @@
-
 package com.crazypanda.crazysystems.world;
 
 import java.util.LinkedList;
