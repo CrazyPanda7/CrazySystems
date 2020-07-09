@@ -1,6 +1,6 @@
 package com.crazypanda.crazysystems.events;
 
-import com.crazypanda.crazysystems.Main;
+import com.crazypanda.crazysystems.CrazySystems;
 import com.crazypanda.crazysystems.fluid.FluidStateMapper;
 import com.crazypanda.crazysystems.init.Kepler452Blocks;
 import com.crazypanda.crazysystems.init.Kepler452Fluids;
@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 /**
  *
  */
-@Mod.EventBusSubscriber(value = Side.CLIENT, modid = Main.MODID)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = CrazySystems.MODID)
 public final class ClientEventHandler {
 
 	/**
@@ -62,7 +62,7 @@ public final class ClientEventHandler {
 		// final Block block = fluid.getBlock(); // Unfortunately this breaks when
 		// another mod registered it's fluid before us.
 		final Item item = Item.getItemFromBlock(block);
-		final ResourceLocation resourceLocation = new ResourceLocation(Main.MODID, fluid.getName());
+		final ResourceLocation resourceLocation = new ResourceLocation(CrazySystems.MODID, fluid.getName());
 		final FluidStateMapper mapper = new FluidStateMapper(
 				resourceLocation.getResourceDomain() + ":" + fluid.getName());
 

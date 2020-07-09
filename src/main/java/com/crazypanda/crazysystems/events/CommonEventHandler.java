@@ -1,6 +1,6 @@
 package com.crazypanda.crazysystems.events;
 
-import com.crazypanda.crazysystems.Main;
+import com.crazypanda.crazysystems.CrazySystems;
 import com.crazypanda.crazysystems.block.ExampleBlock;
 import com.crazypanda.crazysystems.init.Kepler452Blocks;
 import com.crazypanda.crazysystems.init.Kepler452Fluids;
@@ -21,7 +21,7 @@ import net.minecraftforge.fml.relauncher.Side;
 /**
  *
  */
-@Mod.EventBusSubscriber(value = {Side.CLIENT, Side.SERVER}, modid = Main.MODID)
+@Mod.EventBusSubscriber(value = {Side.CLIENT, Side.SERVER}, modid = CrazySystems.MODID)
 public final class CommonEventHandler {
 
 	/**
@@ -92,7 +92,7 @@ public final class CommonEventHandler {
 	 */
 	private static Block setupBlock(final Block block, final String name) {
 		block.setRegistryName(name);
-		block.setUnlocalizedName(Main.MODID + "." + name);
+		block.setUnlocalizedName(CrazySystems.MODID + "." + name);
 
 		return block;
 	}
@@ -118,7 +118,7 @@ public final class CommonEventHandler {
 	 */
 	private static Item setupItem(final Item item, final String name) {
 		item.setRegistryName(name);
-		item.setUnlocalizedName(Main.MODID + "." + name);
+		item.setUnlocalizedName(CrazySystems.MODID + "." + name);
 
 		return item;
 	}
