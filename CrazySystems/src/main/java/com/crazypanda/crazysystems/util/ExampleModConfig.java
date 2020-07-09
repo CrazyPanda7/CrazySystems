@@ -1,6 +1,6 @@
 package com.crazypanda.crazysystems.util;
 
-import com.crazypanda.crazysystems.Main;
+import com.crazypanda.crazysystems.CrazySystems;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
@@ -11,8 +11,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 /**
  *
  */
-@Mod.EventBusSubscriber(modid = Main.MODID)
-@Config(modid = Main.MODID, category = "")
+@Mod.EventBusSubscriber(modid = CrazySystems.MODID)
+@Config(modid = CrazySystems.MODID, category = "")
 public final class ExampleModConfig {
 
 	/**
@@ -39,8 +39,8 @@ public final class ExampleModConfig {
 	 */
 	@SubscribeEvent
 	public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event) {
-		if (event.getModID().equals(Main.MODID)) {
-			ConfigManager.sync(Main.MODID, Config.Type.INSTANCE);
+		if (event.getModID().equals(CrazySystems.MODID)) {
+			ConfigManager.sync(CrazySystems.MODID, Config.Type.INSTANCE);
 		}
 	}
 }

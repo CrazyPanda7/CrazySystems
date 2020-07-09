@@ -3,8 +3,11 @@ package com.crazypanda.crazysystems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.crazypanda.crazysystems.init.Planets;
+import com.crazypanda.crazysystems.init.SolarSystems;
 import com.crazypanda.crazysystems.proxy.Proxy;
 
+import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,15 +21,15 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  *
  */
 @Mod(
-	modid = Main.MODID,
-	name = Main.NAME,
-	version = Main.VERSION,
+	modid = CrazySystems.MODID,
+	name = CrazySystems.NAME,
+	version = CrazySystems.VERSION,
 	dependencies = "required-after:forge@[14.23.4.2705,)",
 	useMetadata = false,
 	clientSideOnly = false,
 	serverSideOnly = false,
 	acceptedMinecraftVersions = "[1.12.2]",
-	acceptableRemoteVersions = Main.VERSION,
+	acceptableRemoteVersions = CrazySystems.VERSION,
 	acceptableSaveVersions = "",
 	certificateFingerprint = "@FINGERPRINT@",
 	modLanguage = "java",
@@ -35,7 +38,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 	guiFactory = "",
 	updateJSON = "https://github.com/MinecraftModDevelopmentMods/ExampleMod/master/update.json",
 	customProperties = {})
-public final class Main {
+public final class CrazySystems {
 
 	/* The Mod's Instance. */
 	//@Mod.Instance
@@ -54,7 +57,7 @@ public final class Main {
 	/**
 	 *
 	 */
-	public static final Logger LOGGER = LogManager.getLogger(Main.MODID);
+	public static final Logger LOGGER = LogManager.getLogger(CrazySystems.MODID);
 
 	/**
 	 *
@@ -64,7 +67,7 @@ public final class Main {
 		/**
 		 * The Instance.
 		 */
-		private static final Main INSTANCE = new Main();
+		private static final CrazySystems INSTANCE = new CrazySystems();
 	}
 
 	/**
@@ -72,7 +75,7 @@ public final class Main {
 	 * @return The Mod's Instance.
 	 */
 	@Mod.InstanceFactory
-	public static Main instance() {
+	public static CrazySystems instance() {
 		return InstanceHolder.INSTANCE;
 	}
 
@@ -100,8 +103,8 @@ public final class Main {
 	 */
 	@Mod.EventHandler
 	public static void preInit(final FMLPreInitializationEvent event) {
-		// Instead of setting the logger above, you can set it like this instead.
-		// logger = event.getModLog()
+		SolarSystems.init();
+		Planets.init();
 		proxy.preInit(event);
 	}
 

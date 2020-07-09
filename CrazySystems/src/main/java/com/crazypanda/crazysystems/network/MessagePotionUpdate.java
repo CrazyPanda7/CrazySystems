@@ -1,6 +1,6 @@
 package com.crazypanda.crazysystems.network;
 
-import com.crazypanda.crazysystems.Main;
+import com.crazypanda.crazysystems.CrazySystems;
 import com.crazypanda.crazysystems.caps.ExampleCapabilities;
 import com.crazypanda.crazysystems.caps.IExampleCapability;
 
@@ -52,7 +52,7 @@ public class MessagePotionUpdate implements IMessage {
 			final FMLCommonHandler handler = FMLCommonHandler.instance();
 			handler.getWorldThread(ctx.getClientHandler()).addScheduledTask(
 					() -> {
-						TileEntity te = Main.getWorld().getTileEntity(message.pos);
+						TileEntity te = CrazySystems.getWorld().getTileEntity(message.pos);
 						IExampleCapability caps = te.getCapability(ExampleCapabilities.EXAMPLE_CAPABILITY, null);
 						if (caps != null) {
 							caps.deserializeNBT(message.potionUpdateData);
