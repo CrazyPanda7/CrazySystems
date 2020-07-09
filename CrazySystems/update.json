@@ -1,0 +1,9 @@
+{
+  "homepage": "http://minecraft.curseforge.com/projects/examplemod",
+  "promos": {
+    "1.12.2-latest": "1.0.0",
+    "1.12.1-latest": "1.0.0",
+    "1.12-latest": "1.0.0",
+    "1.11.2-latest": "0.0.0"
+  }
+}

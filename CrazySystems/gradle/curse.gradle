@@ -1,0 +1,108 @@
+curseforge {
+	if (project.hasProperty('curseforge_project_id')) {
+		apiKey = secret.curseforgeAPIKey
+		project {
+			id = project.curseforge_project_id
+			if (project.hasProperty('curseforge_changelog_filename')) {
+				changelog = file(project.curseforge_changelog_filename)
+			} else {
+				changelog = ''
+			}
+			if (project.hasProperty('curseforge_changelog_type')) {
+				changelogType = project.curseforge_changelog_type
+			}
+			if ((project.hasProperty('curseforge_release_type')) && ((project.curseforge_release_type == 'alpha') || (project.curseforge_release_type == 'beta') || (project.curseforge_release_type == 'release'))) {
+				releaseType = project.curseforge_release_type
+			} else {
+				releaseType = 'alpha'
+			}
+			if (project.hasProperty('curseforge_versions')) {
+				final def versions = "${project.curseforge_versions}".split(', ')
+				versions.each {
+					addGameVersion "${it}"
+				}
+			}
+			mainArtifact(jar) {
+				if (getBooleanProperty('curseforge_use_custom_display_name')) {
+					displayName = "${project.name} ${project.display_version}"
+				}
+				if (project.hasProperty('curseforge_requirements') || project.hasProperty('curseforge_optionals') || project.hasProperty('curseforge_embeddeds') || project.hasProperty('curseforge_tools') || project.hasProperty('curseforge_incompatibles') || project.hasProperty('curseforge_includes')) {
+					relations {
+						if (project.hasProperty('curseforge_requirements')) {
+							final def requirements = "${project.curseforge_requirements}".split(', ')
+							requirements.each {
+								requiredDependency "${it}"
+							}
+						}
+						if (project.hasProperty('curseforge_optionals')) {
+							final def optionals = "${project.curseforge_optionals}".split(', ')
+							optionals.each {
+								optionalDependency "${it}"
+							}
+						}
+						if (project.hasProperty('curseforge_embeddeds')) {
+							final def embeddeds = "${project.curseforge_embeddeds}".split(', ')
+							embeddeds.each {
+								embeddedLibrary "${it}"
+							}
+						}
+						if (project.hasProperty('curseforge_tools')) {
+							final def tools = "${project.curseforge_tools}".split(', ')
+							tools.each {
+								tool "${it}"
+							}
+						}
+						if (project.hasProperty('curseforge_incompatibles')) {
+							final def incompatibles = "${project.curseforge_incompatibles}".split(', ')
+							incompatibles.each {
+								incompatible "${it}"
+							}
+						}
+						if (project.hasProperty('curseforge_includes')) {
+							final def includes = "${project.curseforge_includes}".split(', ')
+							includes.each {
+								include "${it}"
+							}
+						}
+					}
+				}
+			}
+			if (getBooleanProperty('create_api_jar')) {
+				addArtifact(apiJar) {
+					if (getBooleanProperty('curseforge_use_custom_display_name')) {
+						displayName = "${project.name} ${project.display_version} API"
+					}
+				}
+			}
+			if (getBooleanProperty('create_source_jar')) {
+				addArtifact(sourceJar) {
+					if (getBooleanProperty('curseforge_use_custom_display_name')) {
+						displayName = "${project.name} ${project.display_version} Sources"
+					}
+				}
+			}
+			if (getBooleanProperty('create_deobf_jar')) {
+				addArtifact(deobfJar) {
+					if (getBooleanProperty('curseforge_use_custom_display_name')) {
+						displayName = "${project.name} ${project.display_version} Development"
+					}
+				}
+			}
+			if (getBooleanProperty('create_javadoc_jar')) {
+				addArtifact(javadocJar) {
+					if (getBooleanProperty('curseforge_use_custom_display_name')) {
+						displayName = "${project.name} ${project.display_version} Javadoc"
+					}
+				}
+			}
+		}
+	}
+}
+
+boolean getBooleanProperty(final String property) {
+	if (project.hasProperty(property)) {
+		return ((String) project.findProperty(property)).toBoolean()
+	} else {
+		return false
+	}
+}
