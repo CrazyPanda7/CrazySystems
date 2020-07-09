@@ -19,7 +19,7 @@ public class SolarSystems {
 	}
 	private static void registerSolarSystems() {
 		
-		kepler452 = builder.buildSolarSystem("kepler452", "milky_way", new Vector3(1.0F,  1.0F, 1.0F), "kepler452_star");
+		kepler452 = builder.buildSolarSystem("kepler452", "milky_way", new Vector3(1.0F,  1.0F, 1.0F), "kepler452");
 	}
 
 	private static void initializeSolarSystems() {

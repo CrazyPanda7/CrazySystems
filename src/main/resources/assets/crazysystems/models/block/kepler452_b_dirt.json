@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "crazysystems:blocks/kepler452_b_dirt"
+   }
+}
