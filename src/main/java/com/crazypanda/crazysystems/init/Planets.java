@@ -14,7 +14,7 @@ import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeMoon;
 
 public class Planets {
 
-	public static Planet kelper452_b = new Planet("kelper452_a");
+	public static Planet kepler452_b = new Planet("kepler452_b");
 	static AstroBuilder builder = new AstroBuilder(CrazySystems.MODID);
 
 	public static void init() {
@@ -24,16 +24,16 @@ public class Planets {
 
 	public static void initPlanets() {
 
-		kelper452_b = builder.buildPlanet(SolarSystems.kepler452, "kelper452_b", WorldProviderKepler452b.class,
+		kepler452_b = builder.buildPlanet(SolarSystems.kepler452, "kepler452_b", WorldProviderKepler452b.class,
 				ExampleModConfig.GENERAL.kepler452b_dimId, 3, (float) Math.PI, 1.0f, 0.5f, 0.6f);
-		kelper452_b.setRingColorRGB(0.8F, 0.0F, 0.0F);
-		kelper452_b.setAtmosphere(new AtmosphereInfo(false, true, false, 5.0f, 1.0f, 1.0f));
-		kelper452_b.setBiomeInfo(Kepler452BBiomes.kepler452b, Kepler452BBiomes.kepler452b_sea);
+		kepler452_b.setRingColorRGB(0.8F, 0.0F, 0.0F);
+		kepler452_b.setAtmosphere(new AtmosphereInfo(false, true, false, 5.0f, 1.0f, 1.0f));
+		kepler452_b.setBiomeInfo(Kepler452BBiomes.kepler452b, Kepler452BBiomes.kepler452b_sea);
 
 	}
 
 	public static void registerPlanets() {
-		GalaxyRegistry.registerPlanet(kelper452_b);
+		GalaxyRegistry.registerPlanet(kepler452_b);
 		builder.registerTeleportType(WorldProviderKepler452b.class, new TeleportTypeMoon());
 	}
 }

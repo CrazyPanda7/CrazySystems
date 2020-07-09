@@ -74,7 +74,7 @@ public class WorldProviderKepler452b extends WorldProviderBase {
 
     @Override
     public Class<? extends BiomeProvider> getBiomeProviderClass() {
-        BiomeAdaptive.setBodyMultiBiome(Planets.kelper452_b);
+        BiomeAdaptive.setBodyMultiBiome(Planets.kepler452_b);
         return BiomeProviderKepler452b.class;
     }
 
@@ -126,7 +126,7 @@ public class WorldProviderKepler452b extends WorldProviderBase {
 
     @Override
     public CelestialBody getCelestialBody() {
-        return Planets.kelper452_b;
+        return Planets.kepler452_b;
     }
 
     @Override

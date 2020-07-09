@@ -1,6 +1,5 @@
-{
-   "parent": "block/cube_all",
-   "textures": {
-       "all": "crazysystems:blocks/kepler452_b_dirt"
-   }
+  
+{ 
+	"parent": "block/cube_all", 
+ 	"textures": { "all" : "crazysystems:blocks/barnardssystem/barnarda_c/dirt"}
 }
