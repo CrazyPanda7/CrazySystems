@@ -1,3 +1,4 @@
+
 package com.crazypanda.crazysystems.init;
 
 import com.crazypanda.crazysystems.CrazySystems;
@@ -15,7 +16,7 @@ public final class Kepler452Fluids {
 	 *
 	 */
 	private Kepler452Fluids() {
-		//
+
 	}
 
 	/**

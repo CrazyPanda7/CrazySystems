@@ -1,3 +1,4 @@
+
 package com.crazypanda.crazysystems.proxy;
 
 import net.minecraft.client.Minecraft;

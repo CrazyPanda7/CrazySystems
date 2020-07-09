@@ -1,3 +1,4 @@
+
 package com.crazypanda.crazysystems.util;
 
 import com.crazypanda.crazysystems.CrazySystems;
@@ -31,7 +32,12 @@ public final class ExampleModConfig {
 		 */
 		@Config.Comment("Example Boolean")
 		public boolean exampleBoolean = false;
+		
+		@Config.Comment("Kepler452b Dimension ID")
+		public int kepler452b_dimId = -3303;
 	}
+	
+	
 
 	/**
 	 *

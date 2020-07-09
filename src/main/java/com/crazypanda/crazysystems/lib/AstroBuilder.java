@@ -1,3 +1,4 @@
+
 package com.crazypanda.crazysystems.lib;
 
 import java.util.ArrayList;
@@ -103,6 +104,23 @@ public class AstroBuilder {
 				for (Biome b : biome) {
 					body.setBiomeInfo(b);
 				}
+		}
+		return body;
+	}
+	
+	public Planet buildPlanet(SolarSystem system, String name, Class<? extends WorldProvider> provider, int dimID,
+			int tier, float phase, float size, float distancefromcenter, float relativetime) {
+		Planet body = (new Planet(name)).setParentSolarSystem(system);
+		body.setRingColorRGB(0.1F, 0.9F, 2.6F);
+		body.setPhaseShift(phase);
+		body.setRelativeSize(size);
+		body.setRelativeDistanceFromCenter(new CelestialBody.ScalableDistance(distancefromcenter, distancefromcenter));
+		body.setRelativeOrbitTime(relativetime);
+		body.setBodyIcon(new ResourceLocation(this.modid, "textures/celestialbodies/" + name + ".png"));
+		if (provider != null) {
+			body.setTierRequired(tier);
+			body.setDimensionInfo(dimID, provider);
+
 		}
 		return body;
 	}

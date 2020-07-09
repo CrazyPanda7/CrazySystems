@@ -3,11 +3,14 @@ package com.crazypanda.crazysystems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.crazypanda.crazysystems.init.Kepler452Blocks;
 import com.crazypanda.crazysystems.init.Planets;
 import com.crazypanda.crazysystems.init.SolarSystems;
+import com.crazypanda.crazysystems.planets.CrazyDimensions;
 import com.crazypanda.crazysystems.proxy.Proxy;
 
-import micdoodle8.mods.galacticraft.api.galaxies.Planet;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -40,35 +43,26 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 	customProperties = {})
 public final class CrazySystems {
 
-	/* The Mod's Instance. */
-	//@Mod.Instance
-	//private static ExampleMod instance = null
-
-	/** ID of this Mod. */
 	public static final String MODID = "crazysystems";
 
-	/** Display name of this Mod. */
 	public static final String NAME = "CrazySystems";
 
-	/** Version of this Mod. */
-//	public static final String VERSION = "0.0.10";
 	public static final String VERSION = "@MOD_VERSION@";
 
-	/**
-	 *
-	 */
 	public static final Logger LOGGER = LogManager.getLogger(CrazySystems.MODID);
 
-	/**
-	 *
-	 */
 	private static final class InstanceHolder {
 
-		/**
-		 * The Instance.
-		 */
 		private static final CrazySystems INSTANCE = new CrazySystems();
 	}
+	
+	public static CreativeTabs BlocksTab = new CreativeTabs("CrazySystemsTab") {
+		@Override
+		public ItemStack getTabIconItem() {
+
+			return new ItemStack(Kepler452Blocks.EXAMPLE_BLOCK);
+		}
+	};
 
 	/**
 	 *
@@ -132,6 +126,7 @@ public final class CrazySystems {
 	 */
 	@Mod.EventHandler
 	public static void postInit(final FMLPostInitializationEvent event) {
+		CrazyDimensions.init();
 		proxy.postInit(event);
 	}
 

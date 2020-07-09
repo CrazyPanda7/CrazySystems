@@ -1,3 +1,4 @@
+
 package com.crazypanda.crazysystems.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
