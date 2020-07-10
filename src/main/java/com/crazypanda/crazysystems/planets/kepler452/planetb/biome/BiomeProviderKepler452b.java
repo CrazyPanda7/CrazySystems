@@ -54,7 +54,7 @@ public class BiomeProviderKepler452b extends BiomeProvider {
 	private CelestialBody body;
 
 	protected BiomeProviderKepler452b() {
-		this.body = Planets.kelper452_b;
+		this.body = Planets.kepler452_b;
 		this.biomeCache = new BiomeCache(this);
 		this.biomesToSpawnIn = new ArrayList<>();
 	}

@@ -3,7 +3,7 @@
 package com.crazypanda.crazysystems.events;
 
 import com.crazypanda.crazysystems.CrazySystems;
-import com.crazypanda.crazysystems.block.Kepler452_b_dirt;
+import com.crazypanda.crazysystems.planets.kepler452.planetb.b_blocks.*;
 import com.crazypanda.crazysystems.init.Kepler452Blocks;
 import com.crazypanda.crazysystems.init.Kepler452Fluids;
 import com.crazypanda.crazysystems.item.ExampleItem;
@@ -61,7 +61,7 @@ public final class CommonEventHandler {
 	 */
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(setupBlock(new Kepler452_b_dirt(), "example_block"));
+		event.getRegistry().register(setupBlock(new Kepler452Blocks.B_DIRT(), "example_block"));
 		event.getRegistry().register(setupBlock(
 				new BlockFluidClassic(Kepler452Fluids.EXAMPLE_FLUID, Material.LAVA), "example_fluid"));
 	}
@@ -72,8 +72,8 @@ public final class CommonEventHandler {
 	 */
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
-		event.getRegistry().register(setupItemBlock(Kepler452Blocks.EXAMPLE_BLOCK));
-		event.getRegistry().register(setupItemBlock(Kepler452Blocks.EXAMPLE_FLUID));
+		event.getRegistry().register(setupItemBlock(Kepler452Blocks.B_DIRT));
+		//event.getRegistry().register(setupItemBlock(Kepler452Blocks.EXAMPLE_FLUID));
 		event.getRegistry().register(setupItem(new ExampleItem(), "example_item"));
 	}
 

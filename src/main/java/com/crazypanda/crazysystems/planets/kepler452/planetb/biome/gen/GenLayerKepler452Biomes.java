@@ -33,7 +33,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 
 public class GenLayerKepler452Biomes extends GenLayer {
 
-    private static final Biome[] biomes = BiomeAdaptive.getBiomesListFor(Planets.kelper452_b).toArray(new Biome[0]);
+    private static final Biome[] biomes = BiomeAdaptive.getBiomesListFor(Planets.kepler452_b).toArray(new Biome[0]);
 
     public GenLayerKepler452Biomes(long l, GenLayer parent) {
         super(l);

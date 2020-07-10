@@ -5,8 +5,9 @@ package com.crazypanda.crazysystems.events;
 import com.crazypanda.crazysystems.CrazySystems;
 import com.crazypanda.crazysystems.fluid.FluidStateMapper;
 import com.crazypanda.crazysystems.init.Kepler452Blocks;
-import com.crazypanda.crazysystems.init.Kepler452Fluids;
+//import com.crazypanda.crazysystems.init.Kepler452Fluids;
 import com.crazypanda.crazysystems.init.Kepler452Items;
+//import com.crazypanda.crazysystems.planets.kepler452.planetb.b_blocks.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -40,8 +41,8 @@ public final class ClientEventHandler {
 	 */
 	@SubscribeEvent
 	public static void registerModels(final ModelRegistryEvent event) {
-		registerModel(Item.getItemFromBlock(Kepler452Blocks.EXAMPLE_BLOCK));
-		registerFluidRender(Kepler452Blocks.EXAMPLE_FLUID, Kepler452Fluids.EXAMPLE_FLUID);
+		registerModel(Item.getItemFromBlock(Kepler452Blocks.B_DIRT));
+		//registerFluidRender(Kepler452Blocks.EXAMPLE_FLUID, Kepler452Fluids.EXAMPLE_FLUID);
 		registerModel(Kepler452Items.EXAMPLE_ITEM);
 	}
 
