@@ -60,7 +60,7 @@ public final class CrazySystems {
 		@Override
 		public ItemStack getTabIconItem() {
 
-			return new ItemStack(Kepler452Blocks.EXAMPLE_BLOCK);
+			return new ItemStack(Kepler452Blocks.B_DIRT);
 		}
 	};
 
@@ -79,7 +79,7 @@ public final class CrazySystems {
 	@SidedProxy(
 				clientSide = "com.crazypanda.crazysystems.proxy.ClientProxy",
 				serverSide = "com.crazypanda.crazysystems.proxy.ServerProxy")
-	private static Proxy proxy = null;
+	static Proxy proxy = null;
 
 	/**
 	 *

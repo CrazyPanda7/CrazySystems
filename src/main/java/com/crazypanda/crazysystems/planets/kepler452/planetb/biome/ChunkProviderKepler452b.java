@@ -48,8 +48,8 @@ public class ChunkProviderKepler452b extends ChunkProviderCrazyBiomes {
 
     public ChunkProviderKepler452b(World par1World, long seed, boolean mapFeaturesEnabled) {
         super(par1World, seed, mapFeaturesEnabled);
-        this.stoneBlock = Blocks.STAINED_GLASS.getDefaultState();
-        this.waterBlock = Blocks.WATER.getDefaultState();
+        this.stoneBlock = Blocks.BROWN_GLAZED_TERRACOTTA.getDefaultState();
+        this.waterBlock = Blocks.LAVA.getDefaultState();
     }
 
     @Override
