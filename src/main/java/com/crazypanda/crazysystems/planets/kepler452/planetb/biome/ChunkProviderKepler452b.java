@@ -3,6 +3,7 @@ package com.crazypanda.crazysystems.planets.kepler452.planetb.biome;
 import java.util.List;
 import java.util.Random;
 
+import com.crazypanda.crazysystems.init.CrazySystemsBlocks;
 import com.crazypanda.crazysystems.world.chunk.ChunkProviderCrazyBiomes;
 import com.crazypanda.crazysystems.world.chunk.MapGenBaseMeta;
 import com.crazypanda.crazysystems.world.chunk.MapGenCrazyCaveGen;
@@ -24,7 +25,7 @@ public class ChunkProviderKepler452b extends ChunkProviderCrazyBiomes {
 
     public ChunkProviderKepler452b(World par1World, long seed, boolean mapFeaturesEnabled) {
         super(par1World, seed, mapFeaturesEnabled);
-        this.stoneBlock = Blocks.BROWN_GLAZED_TERRACOTTA.getDefaultState();
+        this.stoneBlock = CrazySystemsBlocks.HEAVY_DIRT.getDefaultState();
         this.waterBlock = Blocks.LAVA.getDefaultState();
     }
 
