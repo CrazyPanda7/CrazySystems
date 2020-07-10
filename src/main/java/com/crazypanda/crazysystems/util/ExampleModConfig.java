@@ -1,5 +1,3 @@
-
-
 package com.crazypanda.crazysystems.util;
 
 import com.crazypanda.crazysystems.CrazySystems;

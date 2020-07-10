@@ -1,5 +1,3 @@
-
-
 package com.crazypanda.crazysystems.caps;
 
 import net.minecraft.nbt.NBTTagCompound;

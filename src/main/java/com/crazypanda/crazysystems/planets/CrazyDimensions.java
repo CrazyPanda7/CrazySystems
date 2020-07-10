@@ -1,4 +1,3 @@
-
 package com.crazypanda.crazysystems.planets;
 
 import com.crazypanda.crazysystems.util.ExampleModConfig;

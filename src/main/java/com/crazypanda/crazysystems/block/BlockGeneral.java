@@ -13,9 +13,7 @@ public abstract class BlockGeneral extends BlockBaseRO implements ISortableBlock
 
 	
 	public BlockGeneral(Material material) {
-
 		super(material);
-		
 	}
 
 	public ItemStack getStack(int count) {

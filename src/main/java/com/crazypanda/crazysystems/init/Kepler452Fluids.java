@@ -1,16 +1,5 @@
-
-
 package com.crazypanda.crazysystems.init;
 
-import com.crazypanda.crazysystems.CrazySystems;
-
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
-
-/**
- *
- */
 public final class Kepler452Fluids {
 
 //	/**

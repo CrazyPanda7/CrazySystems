@@ -1,9 +1,8 @@
-
 package com.crazypanda.crazysystems.init;
 
 import com.crazypanda.crazysystems.CrazySystems;
-import com.crazypanda.crazysystems.block.terrain.BlockHeavyDirt;
-import com.crazypanda.crazysystems.block.terrain.BlockHeavyStone;
+import com.crazypanda.crazysystems.block.worldterrain.BlockHeavyDirt;
+import com.crazypanda.crazysystems.block.worldterrain.BlockHeavyStone;
 
 import net.rom.registry.ReadOnlyRegistry;
 

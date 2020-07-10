@@ -1,5 +1,3 @@
-
-
 package com.crazypanda.crazysystems.world;
 
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;

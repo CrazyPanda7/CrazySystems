@@ -1,5 +1,3 @@
-
-
 package com.crazypanda.crazysystems.oregen;
 
 import java.util.Random;

@@ -1,5 +1,3 @@
-
-
 package com.crazypanda.crazysystems.lib;
 
 import java.util.ArrayList;
@@ -27,10 +25,6 @@ import net.minecraft.world.biome.Biome;
 public class AstroBuilder {
 
 	private String modid;
-
-	public AstroBuilder() {
-		super();
-	}
 
 	/**
 	 * Instantiates a new astro builder.

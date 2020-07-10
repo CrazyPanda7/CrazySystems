@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.crazypanda.crazysystems.oregen;
 
 import java.util.LinkedList;
@@ -16,10 +13,6 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-/**
- * @author madman
- *
- */
 public class WorldGenerator implements IWorldGenerator {
 	private List<MineableOre> myOres;
 	public static final int DIMENSION_OVERWORLD = 0;
@@ -27,9 +20,6 @@ public class WorldGenerator implements IWorldGenerator {
 	public static final int DIMENSION_END = 1;
 	public static final int DIMENSION_ANY_OVERWORLD = Integer.MAX_VALUE;
 
-	/**
-	 *
-	 */
 	public WorldGenerator() {
 		this.myOres = new LinkedList<>();
 	}

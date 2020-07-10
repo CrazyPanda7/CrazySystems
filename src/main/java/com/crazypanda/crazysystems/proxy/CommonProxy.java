@@ -1,4 +1,3 @@
-
 package com.crazypanda.crazysystems.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;

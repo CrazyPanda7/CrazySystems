@@ -1,5 +1,3 @@
-
-
 package com.crazypanda.crazysystems.fluid;
 
 import javax.annotation.Nonnull;
@@ -11,14 +9,8 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-/**
- *
- */
 public final class FluidStateMapper extends StateMapperBase implements ItemMeshDefinition {
 
-	/**
-	 *
-	 */
 	private final ModelResourceLocation location;
 
 	/**

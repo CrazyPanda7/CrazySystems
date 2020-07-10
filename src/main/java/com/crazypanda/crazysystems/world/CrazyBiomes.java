@@ -9,4 +9,5 @@ public class CrazyBiomes {
 	
 	public static final List<BiomeGenBaseGC> biomeList = new LinkedList<>();
 	
+	
 }
