@@ -1,31 +1,37 @@
 package com.crazypanda.crazysystems.init;
 
+import com.crazypanda.crazysystems.CrazySystems;
+
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+
 public final class Kepler452Fluids {
 
-//	/**
-//	 *
-//	 */
-//	private Kepler452Fluids() {
-//
-//	}
-//
-//	/**
-//	 *
-//	 */
-//	public static final Fluid EXAMPLE_FLUID = new Fluid("example_fluid",
-//			new ResourceLocation(CrazySystems.MODID, "blocks/example_fluid_still"),
-//			new ResourceLocation(CrazySystems.MODID, "blocks/example_fluid_flow"));
-//
-//	/**
-//	 *
-//	 */
-//	public static void init() {
-//		EXAMPLE_FLUID.setDensity(1);
-//		EXAMPLE_FLUID.setViscosity(1);
-//		EXAMPLE_FLUID.setTemperature(1);
-//		EXAMPLE_FLUID.setLuminosity(1);
-//		EXAMPLE_FLUID.setUnlocalizedName(CrazySystems.MODID + "." + "example_fluid");
-//		FluidRegistry.registerFluid(EXAMPLE_FLUID);
-//		FluidRegistry.addBucketForFluid(EXAMPLE_FLUID);
-//	}
+ 	/**
+ 	 *
+ 	 */
+ 	private Kepler452Fluids() {
+ 
+ 	}
+ 
+ 	/**
+ 	 *
+ 	 */
+ 	public static final Fluid B_WATER = new Fluid("b_fluid",
+ 			new ResourceLocation(CrazySystems.MODID, "blocks/b_water"),
+ 			new ResourceLocation(CrazySystems.MODID, "blocks/b_water"));
+ 
+ 	/**
+ 	 *
+ 	 */
+ 	public static void init() {
+ 		B_WATER.setDensity(1);
+ 		B_WATER.setViscosity(1);
+ 		B_WATER.setTemperature(1);
+ 		B_WATER.setLuminosity(1);
+ 		B_WATER.setUnlocalizedName(CrazySystems.MODID + "." + "B_WATER");
+ 		FluidRegistry.registerFluid(B_WATER);
+ 		FluidRegistry.addBucketForFluid(B_WATER);
+ 	}
 }

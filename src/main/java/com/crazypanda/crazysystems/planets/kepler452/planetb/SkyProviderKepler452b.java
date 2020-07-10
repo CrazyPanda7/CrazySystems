@@ -7,6 +7,7 @@ import org.lwjgl.opengl.GL12;
 
 import com.crazypanda.crazysystems.CrazySystems;
 
+import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.Constants;
 import net.minecraft.client.Minecraft;

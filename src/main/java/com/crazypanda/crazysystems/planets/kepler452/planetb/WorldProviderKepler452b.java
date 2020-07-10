@@ -24,7 +24,7 @@ public class WorldProviderKepler452b extends WorldProviderBase {
 
     @Override
     public Vector3 getSkyColor() {
-        return new Vector3(0, 0, 0);
+        return new Vector3(.3, .6, 1);
     }
 
     @Override

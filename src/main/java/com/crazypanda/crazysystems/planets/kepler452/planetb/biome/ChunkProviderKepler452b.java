@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.crazypanda.crazysystems.init.CrazySystemsBlocks;
+//import com.crazypanda.crazysystems.init.Kepler452Fluids;
 import com.crazypanda.crazysystems.world.chunk.ChunkProviderCrazyBiomes;
 import com.crazypanda.crazysystems.world.chunk.MapGenBaseMeta;
 import com.crazypanda.crazysystems.world.chunk.MapGenCrazyCaveGen;
@@ -26,7 +27,7 @@ public class ChunkProviderKepler452b extends ChunkProviderCrazyBiomes {
     public ChunkProviderKepler452b(World par1World, long seed, boolean mapFeaturesEnabled) {
         super(par1World, seed, mapFeaturesEnabled);
         this.stoneBlock = CrazySystemsBlocks.HEAVY_DIRT.getDefaultState();
-        this.waterBlock = Blocks.LAVA.getDefaultState();
+        this.waterBlock =Blocks.WATER /*Kepler452Fluids.B_WATER*/.getDefaultState();
     }
 
     @Override
