@@ -10,17 +10,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 /**
  *
  */
+@GameRegistry.ObjectHolder(CrazySystems.MODID)
 public final class Kepler452Items {
-//
-//	/**
-//	 *
-// 	 */
-//	private Kepler452Items() {
-//		//
-//	}
-//
-//	/**
-//	 *
-// 	 */
-//	public static final Item EXAMPLE_ITEM = null;
+
+	/**
+	 *
+ 	 */
+	private Kepler452Items() {
+		//
+	}
+
+	/**
+	 *
+ 	 */
+	public static final Item EXAMPLE_ITEM = null;
 }

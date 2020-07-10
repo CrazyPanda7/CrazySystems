@@ -1,32 +1,28 @@
 package com.crazypanda.crazysystems;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.crazypanda.crazysystems.init.CrazySystemsBlocks;
+import com.crazypanda.crazysystems.init.Kepler452Blocks;
 import com.crazypanda.crazysystems.init.Planets;
 import com.crazypanda.crazysystems.init.SolarSystems;
 import com.crazypanda.crazysystems.planets.CrazyDimensions;
-import com.crazypanda.crazysystems.proxy.CommonProxy;
+import com.crazypanda.crazysystems.proxy.Proxy;
 
-import mcp.MethodsReturnNonnullByDefault;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.rom.base.IMod;
-import net.rom.registry.ReadOnlyRegistry;
-import net.rom.utils.ModLogger;
-import net.rom.utils.TranslateUtil;
 
+/**
+ *
+ */
 @Mod(
 	modid = CrazySystems.MODID,
 	name = CrazySystems.NAME,
@@ -45,94 +41,104 @@ import net.rom.utils.TranslateUtil;
 	guiFactory = "",
 	updateJSON = "https://github.com/MinecraftModDevelopmentMods/ExampleMod/master/update.json",
 	customProperties = {})
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
-public class CrazySystems implements IMod {
-	
+public final class CrazySystems {
+
 	public static final String MODID = "crazysystems";
+
 	public static final String NAME = "CrazySystems";
+
 	public static final String VERSION = "@MOD_VERSION@";
-	public static final int BUILD = 1;
-	
-	@Instance(MODID)
-	public static CrazySystems instance;
-	public static ReadOnlyRegistry registry = new ReadOnlyRegistry();
-	public static TranslateUtil translate = new TranslateUtil(MODID);
-	public static ModLogger logger = new ModLogger(MODID, BUILD);
+
 	public static final Logger LOGGER = LogManager.getLogger(CrazySystems.MODID);
-	
-	@SidedProxy(clientSide = "com.crazypanda.crazysystems.proxy.ClientProxy", serverSide = "com.crazypanda.crazysystems.proxy.CommonProxy")
-	public static CommonProxy proxy;
+
+	private static final class InstanceHolder {
+
+		private static final CrazySystems INSTANCE = new CrazySystems();
+	}
 	
 	public static CreativeTabs BlocksTab = new CreativeTabs("CrazySystemsTab") {
 		@Override
 		public ItemStack getTabIconItem() {
 
-			return new ItemStack(CrazySystemsBlocks.HEAVY_STONE);
+			return new ItemStack(Kepler452Blocks.B_DIRT);
 		}
 	};
-	
+
+	/**
+	 *
+	 * @return The Mod's Instance.
+	 */
+	@Mod.InstanceFactory
+	public static CrazySystems instance() {
+		return InstanceHolder.INSTANCE;
+	}
+
+	/**
+	 *
+ 	 */
+	@SidedProxy(
+				clientSide = "com.crazypanda.crazysystems.proxy.ClientProxy",
+				serverSide = "com.crazypanda.crazysystems.proxy.ServerProxy")
+	static Proxy proxy = null;
+
 	/**
 	 *
  	 * @param event The Event.
 	 */
-	@EventHandler
-	public void preInit(final FMLPreInitializationEvent event) {
-		//// All Blocks, Items must be initialized here, configs as well
-		
-		registry.setMod(this);
-		registry.getRecipeMaker();
-		registry.addRegistrationHandler(CrazySystemsBlocks::registerAll, Block.class);
-		
+	@Mod.EventHandler
+	public static void onFingerprintViolation(final FMLFingerprintViolationEvent event) {
+		// This complains if jar not signed, even if certificateFingerprint is blank
+		LOGGER.warn("Invalid Fingerprint");
+	}
+
+	/**
+	 *
+ 	 * @param event The Event.
+	 */
+	@Mod.EventHandler
+	public static void preInit(final FMLPreInitializationEvent event) {
 		SolarSystems.init();
 		Planets.init();
-		
-		//// Above ////
-		proxy.preInit(registry, event);
+		proxy.preInit(event);
 	}
 
 	/**
 	 *
  	 * @param event The Event.
 	 */
-	@EventHandler
+	@Mod.EventHandler
 	public static void init(final FMLInitializationEvent event) {
-		
-		//// Above ////
-		proxy.init(registry, event);
+		proxy.init(event);
 	}
 
 	/**
 	 *
  	 * @param event The Event.
 	 */
-	@EventHandler
+	@Mod.EventHandler
+	public static void receiveIMC(final IMCEvent event) {
+		proxy.receiveIMC(event);
+	}
+
+	/**
+	 *
+ 	 * @param event The Event.
+	 */
+	@Mod.EventHandler
 	public static void postInit(final FMLPostInitializationEvent event) {
 		CrazyDimensions.init();
-		
-		
-		//// Above ////
-		proxy.postInit(registry, event);
+		proxy.postInit(event);
 	}
 
-	@Override
-	public String getModId() {
-		return MODID;
+	public static World getWorld() {
+		return proxy.getWorld();
 	}
 
-	@Override
-	public String getModName() {
-		return NAME;
+	/*
+	// Before 1.12
+	@Mod.EventHandler
+	public static void onRemap(final FMLMissingMappingsEvent event) {
+		proxy.onRemap(event);
 	}
-
-	@Override
-	public String getVersion() {
-		return VERSION;
-	}
-
-	@Override
-	public int getBuildNum() {
-		return 0;
-	}
-
+	*/
 }
